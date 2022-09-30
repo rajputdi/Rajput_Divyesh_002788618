@@ -33,6 +33,7 @@ public class mainForm extends javax.swing.JFrame {
         splitMenu = new javax.swing.JPanel();
         btnCreate = new javax.swing.JButton();
         btnView = new javax.swing.JButton();
+        btnSearch = new javax.swing.JButton();
         splitWorkArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,6 +52,13 @@ public class mainForm extends javax.swing.JFrame {
             }
         });
 
+        btnSearch.setText("Search");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout splitMenuLayout = new javax.swing.GroupLayout(splitMenu);
         splitMenu.setLayout(splitMenuLayout);
         splitMenuLayout.setHorizontalGroup(
@@ -59,7 +67,8 @@ public class mainForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(splitMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnCreate)
-                    .addComponent(btnView))
+                    .addComponent(btnView)
+                    .addComponent(btnSearch))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
 
@@ -72,7 +81,9 @@ public class mainForm extends javax.swing.JFrame {
                 .addComponent(btnCreate)
                 .addGap(18, 18, 18)
                 .addComponent(btnView)
-                .addContainerGap(423, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnSearch)
+                .addContainerGap(382, Short.MAX_VALUE))
         );
 
         splitPane.setLeftComponent(splitMenu);
@@ -121,6 +132,12 @@ public class mainForm extends javax.swing.JFrame {
         splitPane.setRightComponent(viewPanel);
     }//GEN-LAST:event_btnViewActionPerformed
 
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        // TODO add your handling code here:
+        SearchPanel searchPanel = new SearchPanel(employee);
+        splitPane.setRightComponent(searchPanel);
+    }//GEN-LAST:event_btnSearchActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -158,6 +175,7 @@ public class mainForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;
+    private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnView;
     private javax.swing.JPanel splitMenu;
     private javax.swing.JSplitPane splitPane;

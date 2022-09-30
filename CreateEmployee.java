@@ -112,7 +112,11 @@ public class CreateEmployee implements Serializable {
     public void setEmailAdd(String emailAdd) {
         this.emailAdd = emailAdd;
     }
-
+    
+    @Override 
+    public String toString(){
+        return eName;
+    }
     
     
     
