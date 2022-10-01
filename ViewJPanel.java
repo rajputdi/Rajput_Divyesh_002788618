@@ -4,9 +4,11 @@
  */
 package com.mycompany.employeemgmnt;
 
+import java.awt.Image;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.io.*;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -59,10 +61,15 @@ public class ViewJPanel extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jUpdate = new javax.swing.JButton();
+        jProfilePic = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Footlight MT Light", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("View Employees");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 21, 661, 31));
 
         tblEmployees.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -77,12 +84,15 @@ public class ViewJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblEmployees);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 64, 655, 322));
+
         JDelete.setText("Delete");
         JDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JDeleteActionPerformed(evt);
             }
         });
+        add(JDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(559, 404, 108, -1));
 
         jViewEmp.setText("View details");
         jViewEmp.addActionListener(new java.awt.event.ActionListener() {
@@ -90,156 +100,70 @@ public class ViewJPanel extends javax.swing.JPanel {
                 jViewEmpActionPerformed(evt);
             }
         });
+        add(jViewEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(433, 404, 108, -1));
 
         jLabel9.setText("Team Info");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 605, 65, 19));
+        add(jTeamInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 603, 123, -1));
 
         jLabel10.setText("Position");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 639, 65, -1));
+        add(jPosition, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 636, 328, -1));
 
         jLabel11.setText("Phone No");
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 670, -1, -1));
 
         jCellNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCellNoActionPerformed(evt);
             }
         });
+        add(jCellNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 670, 328, -1));
 
         jLabel12.setText("Email Address");
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 713, -1, -1));
+        add(jEmailAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 710, 328, -1));
+        add(jName, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 404, 211, -1));
+        add(jNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 438, 131, -1));
 
         jGender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jGenderActionPerformed(evt);
             }
         });
+        add(jGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 506, 91, -1));
+        add(jAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 472, 102, -1));
+        add(jStartDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 540, 106, -1));
 
         jLabel3.setText("Name");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 407, 73, -1));
+        add(jLevel, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 574, 91, 20));
 
         jLabel4.setText("Employee ID");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 441, 73, -1));
 
         jLabel5.setText("Age");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 475, 73, -1));
 
         jLabel6.setText("Gender");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 509, 73, -1));
 
         jLabel7.setText("Start Date");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 543, 73, -1));
 
         jLabel8.setText("Level");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 574, 73, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jScrollPane1))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel12))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCellNo, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jEmailAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(jGender, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jName, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jAge, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(91, 91, 91)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTeamInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jViewEmp)
-                        .addGap(18, 18, 18)
-                        .addComponent(JDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
+        jUpdate.setText("Update");
+        jUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jUpdateActionPerformed(evt);
+            }
+        });
+        add(jUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 440, 100, -1));
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {JDelete, jViewEmp});
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(JDelete)
-                        .addComponent(jViewEmp))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(jGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(jStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(7, 7, 7)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTeamInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(11, 11, 11)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(jPosition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(jCellNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(jEmailAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {JDelete, jViewEmp});
-
+        jProfilePic.setText("jLabel2");
+        add(jProfilePic, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 470, 190, 150));
     }// </editor-fold>//GEN-END:initComponents
 
     private void JDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JDeleteActionPerformed
@@ -276,8 +200,8 @@ public class ViewJPanel extends javax.swing.JPanel {
         selectedEmployee = (CreateEmployee) model.getValueAt(selectedRowIndex , 0);
         
         jName.setText(String.valueOf(selectedEmployee.geteName()));
-        /**jNumber.setText(selectedEmployee.geteNumber());
-        //jAge.setText(String.valueOf(selectedEmployee.geteAge()));
+        jNumber.setText(selectedEmployee.geteNumber());
+        jAge.setText(String.valueOf(selectedEmployee.geteAge()));
         jGender.setText(selectedEmployee.geteGender());
         jStartDate.setText(selectedEmployee.geteDate());
         jLevel.setText(selectedEmployee.geteLevel());
@@ -285,7 +209,12 @@ public class ViewJPanel extends javax.swing.JPanel {
         jPosition.setText(selectedEmployee.getePosition());
         jCellNo.setText(selectedEmployee.geteCellNo());
         jEmailAdd.setText(selectedEmployee.getEmailAdd());
-        **/
+        
+        ImageIcon ii = new ImageIcon(selectedEmployee.geteProfilePath());
+//            Resize image to fit jlabel
+        Image image = ii.getImage().getScaledInstance(jProfilePic.getWidth(), jProfilePic.getHeight(), Image.SCALE_SMOOTH);
+             
+        jProfilePic.setIcon(new ImageIcon(image));
         
         
     }//GEN-LAST:event_jViewEmpActionPerformed
@@ -297,6 +226,39 @@ public class ViewJPanel extends javax.swing.JPanel {
     private void jGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jGenderActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jGenderActionPerformed
+
+    private void jUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUpdateActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) tblEmployees.getModel();
+        if(tblEmployees.getSelectedRowCount()==1){
+            String upName = jName.getText();
+            String upEmpId = jNumber.getText();
+            String upAge = jAge.getText();
+            String upGender = jGender.getText();
+            String upDate = jStartDate.getText();
+            String upLevel = jLevel.getText();
+            String upTeamInfo =jTeamInfo.getText();
+            String upPosition =jPosition.getText();
+            String upCellNo =jCellNo.getText();
+            String upEmailAdd = jEmailAdd.getText();
+            
+                    
+            model.setValueAt(upName,tblEmployees.getSelectedRow(), 0);
+            model.setValueAt(upEmpId,tblEmployees.getSelectedRow(), 1);
+            model.setValueAt(upAge,tblEmployees.getSelectedRow(), 2);
+            model.setValueAt(upGender,tblEmployees.getSelectedRow(), 3);
+            model.setValueAt(upDate,tblEmployees.getSelectedRow(), 4);
+            model.setValueAt(upLevel,tblEmployees.getSelectedRow(), 5);
+            model.setValueAt(upTeamInfo,tblEmployees.getSelectedRow(), 6);
+            model.setValueAt(upPosition,tblEmployees.getSelectedRow(), 7);
+            model.setValueAt(upCellNo,tblEmployees.getSelectedRow(), 8);
+            model.setValueAt(upEmailAdd,tblEmployees.getSelectedRow(), 9);
+            
+            
+        }
+        
+       
+    }//GEN-LAST:event_jUpdateActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -320,9 +282,11 @@ public class ViewJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField jName;
     private javax.swing.JTextField jNumber;
     private javax.swing.JTextField jPosition;
+    private javax.swing.JLabel jProfilePic;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jStartDate;
     private javax.swing.JTextField jTeamInfo;
+    private javax.swing.JButton jUpdate;
     private javax.swing.JButton jViewEmp;
     private javax.swing.JTable tblEmployees;
     // End of variables declaration//GEN-END:variables
@@ -331,7 +295,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) tblEmployees.getModel();
         model.setRowCount(0);
         for (CreateEmployee ce : employee.getEmployee()){
-            Object[] row = new Object[10];
+            Object[] row = new Object[11];
             row[0] = ce;
             row[1]= ce.geteNumber();
             row[2]= ce.geteAge();
@@ -342,6 +306,7 @@ public class ViewJPanel extends javax.swing.JPanel {
             row[7]= ce.getePosition();
             row[8]= ce.geteCellNo();
             row[9]= ce.getEmailAdd();
+            row[10] = ce.geteProfilePath(); //change profile picture
             
             model.addRow(row);
         }

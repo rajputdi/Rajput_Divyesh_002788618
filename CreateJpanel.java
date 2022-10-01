@@ -4,9 +4,12 @@
  */
 package com.mycompany.employeemgmnt;
 
+import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -18,6 +21,7 @@ public class CreateJpanel extends javax.swing.JPanel {
      * Creates new form CreateJpanel
      */
     EmployeeList employee;
+    public String selectedImagePath; //profile picture
     public CreateJpanel(EmployeeList employee) {
         initComponents();
         this.employee = employee;
@@ -55,6 +59,7 @@ public class CreateJpanel extends javax.swing.JPanel {
         jEmailAdd = new javax.swing.JTextField();
         btnCreateEmp = new javax.swing.JButton();
         jGender = new javax.swing.JTextField();
+        jUpload = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Footlight MT Light", 0, 18)); // NOI18N
         jLabel1.setText("Create Employee");
@@ -100,6 +105,13 @@ public class CreateJpanel extends javax.swing.JPanel {
             }
         });
 
+        jUpload.setText("Upload Profile Photo");
+        jUpload.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jUploadActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -108,7 +120,7 @@ public class CreateJpanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -119,17 +131,16 @@ public class CreateJpanel extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jCellNo, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jEmailAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnCreateEmp)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
-                                .addComponent(jGender, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(125, 125, 125)
-                        .addComponent(btnCreateEmp))
+                                .addComponent(jGender, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jUpload, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(123, 123, 123)
                         .addComponent(jStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -159,7 +170,7 @@ public class CreateJpanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTeamInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jCellNo, jEmailAdd, jPosition});
@@ -213,9 +224,11 @@ public class CreateJpanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(jEmailAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jUpload, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnCreateEmp)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -236,6 +249,8 @@ public class CreateJpanel extends javax.swing.JPanel {
      String eCellNo = jCellNo.getText();
      String emailAdd = jEmailAdd.getText();
      
+     
+     
      CreateEmployee ce = employee.addNewEmployee();
      ce.seteName(eName);
      ce.seteNumber(eNumber);
@@ -248,10 +263,13 @@ public class CreateJpanel extends javax.swing.JPanel {
      ce.setePosition(ePosition);
      ce.seteTeamInfo(eTeamInfo);
      ce.seteCellNo(eCellNo);
+     ce.seteProfilePath(selectedImagePath); //profile picture change
+     
      
      JOptionPane.showMessageDialog(this, "New Employee added");
     
      jName.setText("");
+     jNumber.setText("");
      jAge.setText("");
      jCellNo.setText("");
      jGender.setText("");
@@ -268,6 +286,20 @@ public class CreateJpanel extends javax.swing.JPanel {
     private void jGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jGenderActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jGenderActionPerformed
+
+    private void jUploadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUploadActionPerformed
+        // TODO add your handling code here:
+        JFileChooser browseImageFile = new JFileChooser();
+        //Filter image extensions
+        FileNameExtensionFilter fnef = new FileNameExtensionFilter("IMAGES", "png", "jpg", "jpeg");
+        browseImageFile.addChoosableFileFilter(fnef);
+        int showOpenDialogue = browseImageFile.showOpenDialog(null);
+         
+        if (showOpenDialogue == JFileChooser.APPROVE_OPTION) {
+            File selectedImageFile = browseImageFile.getSelectedFile();
+            selectedImagePath = selectedImageFile.getAbsolutePath();
+        }  
+    }//GEN-LAST:event_jUploadActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -294,5 +326,6 @@ public class CreateJpanel extends javax.swing.JPanel {
     private javax.swing.JTextField jPosition;
     private javax.swing.JTextField jStartDate;
     private javax.swing.JTextField jTeamInfo;
+    private javax.swing.JButton jUpload;
     // End of variables declaration//GEN-END:variables
 }

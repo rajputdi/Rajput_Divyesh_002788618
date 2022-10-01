@@ -19,6 +19,7 @@ public class CreateEmployee implements Serializable {
     private String ePosition;
     private String eCellNo;
     private String emailAdd;
+    private String eProfilePath;
 
   /**  public CreateEmployee(String eName, String eNumber, short eAge, String eGender, String eDate, String eLevel, String eTeamInfo, String ePosition, String eCellNo, String emailAdd) {
         this.eName = eName;
@@ -32,6 +33,7 @@ public class CreateEmployee implements Serializable {
         this.eCellNo = eCellNo;
         this.emailAdd = emailAdd;
     }
+     * @return 
 **/
     public String geteName() {
         return eName;
@@ -112,6 +114,15 @@ public class CreateEmployee implements Serializable {
     public void setEmailAdd(String emailAdd) {
         this.emailAdd = emailAdd;
     }
+
+    public String geteProfilePath() {
+        return eProfilePath;
+    }
+
+    public void seteProfilePath(String eProfilePath) {
+        this.eProfilePath = eProfilePath;
+    }
+    
     
     @Override 
     public String toString(){

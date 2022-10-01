@@ -4,6 +4,7 @@
  */
 package com.mycompany.employeemgmnt;
 import java.util.*;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Divyesh Rajput
@@ -128,6 +129,23 @@ public class SearchPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) tblEmployees.getModel();
+        model.setRowCount(0);
+        for (CreateEmployee ce : employee.getEmployee()){
+            Object[] row = new Object[10];
+            row[0] = ce;
+            row[1]= ce.geteNumber();
+            row[2]= ce.geteAge();
+            row[3]= ce.geteGender();
+            row[4]= ce.geteDate();
+            row[5]= ce.geteLevel();
+            row[6]= ce.geteTeamInfo();
+            row[7]= ce.getePosition();
+            row[8]= ce.geteCellNo();
+            row[9]= ce.getEmailAdd();
+            
+            model.addRow(row);
+        }
         
     }
 }
