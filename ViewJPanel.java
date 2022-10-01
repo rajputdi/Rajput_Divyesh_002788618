@@ -9,6 +9,8 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.io.*;
 import javax.swing.ImageIcon;
+import javax.swing.RowFilter;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -39,8 +41,8 @@ public class ViewJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblEmployees = new javax.swing.JTable();
-        JDelete = new javax.swing.JButton();
         jViewEmp = new javax.swing.JButton();
+        JDelete = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jTeamInfo = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
@@ -63,6 +65,8 @@ public class ViewJPanel extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jUpdate = new javax.swing.JButton();
         jProfilePic = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jSearch = new javax.swing.JTextField();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -84,15 +88,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblEmployees);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 64, 655, 322));
-
-        JDelete.setText("Delete");
-        JDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JDeleteActionPerformed(evt);
-            }
-        });
-        add(JDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(559, 404, 108, -1));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 655, 322));
 
         jViewEmp.setText("View details");
         jViewEmp.addActionListener(new java.awt.event.ActionListener() {
@@ -100,59 +96,67 @@ public class ViewJPanel extends javax.swing.JPanel {
                 jViewEmpActionPerformed(evt);
             }
         });
-        add(jViewEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(433, 404, 108, -1));
+        add(jViewEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 450, 108, -1));
+
+        JDelete.setText("Delete");
+        JDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JDeleteActionPerformed(evt);
+            }
+        });
+        add(JDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 450, 108, -1));
 
         jLabel9.setText("Team Info");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 605, 65, 19));
-        add(jTeamInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 603, 123, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 630, 65, 19));
+        add(jTeamInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 630, 123, -1));
 
         jLabel10.setText("Position");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 639, 65, -1));
-        add(jPosition, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 636, 328, -1));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 660, 65, -1));
+        add(jPosition, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 660, 328, -1));
 
         jLabel11.setText("Phone No");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 670, -1, -1));
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 700, -1, -1));
 
         jCellNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCellNoActionPerformed(evt);
             }
         });
-        add(jCellNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 670, 328, -1));
+        add(jCellNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 700, 328, -1));
 
         jLabel12.setText("Email Address");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 713, -1, -1));
-        add(jEmailAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 710, 328, -1));
-        add(jName, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 404, 211, -1));
-        add(jNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 438, 131, -1));
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 740, -1, -1));
+        add(jEmailAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 740, 328, -1));
+        add(jName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 440, 211, -1));
+        add(jNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 470, 131, -1));
 
         jGender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jGenderActionPerformed(evt);
             }
         });
-        add(jGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 506, 91, -1));
-        add(jAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 472, 102, -1));
-        add(jStartDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 540, 106, -1));
+        add(jGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 530, 91, -1));
+        add(jAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 500, 102, -1));
+        add(jStartDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 570, 106, -1));
 
         jLabel3.setText("Name");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 407, 73, -1));
-        add(jLevel, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 574, 91, 20));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 73, -1));
+        add(jLevel, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 600, 91, 20));
 
         jLabel4.setText("Employee ID");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 441, 73, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 73, -1));
 
         jLabel5.setText("Age");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 475, 73, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 73, -1));
 
         jLabel6.setText("Gender");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 509, 73, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 73, -1));
 
         jLabel7.setText("Start Date");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 543, 73, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 570, 73, -1));
 
         jLabel8.setText("Level");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 574, 73, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 600, 73, -1));
 
         jUpdate.setText("Update");
         jUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -160,15 +164,34 @@ public class ViewJPanel extends javax.swing.JPanel {
                 jUpdateActionPerformed(evt);
             }
         });
-        add(jUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 440, 100, -1));
+        add(jUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 480, 100, 30));
 
         jProfilePic.setText("jLabel2");
-        add(jProfilePic, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 470, 190, 150));
+        jProfilePic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(jProfilePic, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 560, 190, 200));
+
+        jLabel2.setText("Search Employee: ");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 100, 30));
+
+        jSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSearchActionPerformed(evt);
+            }
+        });
+        jSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jSearchKeyPressed(evt);
+            }
+        });
+        add(jSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 550, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void JDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JDeleteActionPerformed
         // TODO add your handling code here:
+        int selectedRowIndex = tblEmployees.getSelectedRow();
         
+        CreateEmployee selectedEmployee = (CreateEmployee) tblEmployees.getValueAt(selectedRowIndex , 0);
+        employee.deleteEmployee(selectedEmployee);
         DefaultTableModel tblModel = (DefaultTableModel) tblEmployees.getModel();
         
         //delete row
@@ -184,7 +207,7 @@ public class ViewJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(this, "Please select a single row only");
             }
         }
-        
+
     }//GEN-LAST:event_JDeleteActionPerformed
 
     private void jViewEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jViewEmpActionPerformed
@@ -230,8 +253,11 @@ public class ViewJPanel extends javax.swing.JPanel {
     private void jUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUpdateActionPerformed
         // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) tblEmployees.getModel();
+        int updatedRowIndex = tblEmployees.getSelectedRow();
+        
         if(tblEmployees.getSelectedRowCount()==1){
-            String upName = jName.getText();
+            
+          //  String upName = jName.getText();
             String upEmpId = jNumber.getText();
             String upAge = jAge.getText();
             String upGender = jGender.getText();
@@ -241,10 +267,12 @@ public class ViewJPanel extends javax.swing.JPanel {
             String upPosition =jPosition.getText();
             String upCellNo =jCellNo.getText();
             String upEmailAdd = jEmailAdd.getText();
+            }
+                   
+            model.setValueAt(jName.getText(),updatedRowIndex, 0);
+            model.setValueAt(jNumber.getText(),updatedRowIndex, 1);
             
-                    
-            model.setValueAt(upName,tblEmployees.getSelectedRow(), 0);
-            model.setValueAt(upEmpId,tblEmployees.getSelectedRow(), 1);
+           /**
             model.setValueAt(upAge,tblEmployees.getSelectedRow(), 2);
             model.setValueAt(upGender,tblEmployees.getSelectedRow(), 3);
             model.setValueAt(upDate,tblEmployees.getSelectedRow(), 4);
@@ -253,12 +281,24 @@ public class ViewJPanel extends javax.swing.JPanel {
             model.setValueAt(upPosition,tblEmployees.getSelectedRow(), 7);
             model.setValueAt(upCellNo,tblEmployees.getSelectedRow(), 8);
             model.setValueAt(upEmailAdd,tblEmployees.getSelectedRow(), 9);
+            **/
             
-            
-        }
+        
         
        
     }//GEN-LAST:event_jUpdateActionPerformed
+
+    private void jSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jSearchActionPerformed
+
+    private void jSearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jSearchKeyPressed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel)tblEmployees.getModel();
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(model);
+        tblEmployees.setRowSorter (tr);
+        tr.setRowFilter(RowFilter.regexFilter(jSearch.getText().trim()));
+    }//GEN-LAST:event_jSearchKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -271,6 +311,7 @@ public class ViewJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -284,6 +325,7 @@ public class ViewJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField jPosition;
     private javax.swing.JLabel jProfilePic;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jSearch;
     private javax.swing.JTextField jStartDate;
     private javax.swing.JTextField jTeamInfo;
     private javax.swing.JButton jUpdate;

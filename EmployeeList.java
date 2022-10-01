@@ -29,5 +29,10 @@ public class EmployeeList {
         employee.add(newEmployee);
         return newEmployee;
     }
+
+    public void deleteEmployee(CreateEmployee de) {
+        employee.remove(de);
+        
+    }
     
 }

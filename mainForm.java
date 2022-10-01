@@ -134,8 +134,8 @@ public class mainForm extends javax.swing.JFrame {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
-        SearchPanel searchPanel = new SearchPanel(employee);
-        splitPane.setRightComponent(searchPanel);
+       SearchPanel searchPanel = new SearchPanel(employee);
+       splitPane.setRightComponent(searchPanel);
     }//GEN-LAST:event_btnSearchActionPerformed
 
     /**
