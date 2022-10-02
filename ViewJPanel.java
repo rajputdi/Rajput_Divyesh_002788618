@@ -68,12 +68,14 @@ public class ViewJPanel extends javax.swing.JPanel {
         jSearch = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 9), new java.awt.Dimension(0, 9), new java.awt.Dimension(32767, 9));
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Footlight MT Light", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("View Employees");
+        jLabel1.setText("View/Delete Employees");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 21, 661, 31));
 
         tblEmployees.setModel(new javax.swing.table.DefaultTableModel(
@@ -89,7 +91,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblEmployees);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 760, 322));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 760, 270));
 
         jViewEmp.setText("View details");
         jViewEmp.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +99,7 @@ public class ViewJPanel extends javax.swing.JPanel {
                 jViewEmpActionPerformed(evt);
             }
         });
-        add(jViewEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 450, 100, 30));
+        add(jViewEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 420, 100, 30));
 
         JDelete.setText("Delete");
         JDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -105,65 +107,65 @@ public class ViewJPanel extends javax.swing.JPanel {
                 JDeleteActionPerformed(evt);
             }
         });
-        add(JDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 450, 90, 30));
+        add(JDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 420, 90, 30));
 
         jLabel9.setText("Team Info");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 640, 65, 20));
-        add(jTeamInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 640, 210, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 650, 65, 20));
+        add(jTeamInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 640, 230, 30));
 
         jLabel10.setText("Position");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 670, 70, 30));
-        add(jPosition, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 670, 210, 30));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 680, 70, 30));
+        add(jPosition, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 680, 230, 30));
 
-        jLabel11.setText("Phone No");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 710, 70, 20));
+        jLabel11.setText("Cell Phone No");
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 730, 80, 20));
 
         jCellNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCellNoActionPerformed(evt);
             }
         });
-        add(jCellNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 710, 328, -1));
+        add(jCellNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 720, 230, 30));
 
         jLabel12.setText("Email Address");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 740, -1, -1));
-        add(jEmailAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 740, 328, -1));
-        add(jName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 440, 211, -1));
-        add(jNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 470, 131, -1));
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 770, -1, -1));
+        add(jEmailAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 760, 230, 30));
+        add(jName, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 432, 230, 30));
+        add(jNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 230, -1));
 
         jGender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jGenderActionPerformed(evt);
             }
         });
-        add(jGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 530, 80, 30));
-        add(jAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 498, 102, -1));
-        add(jStartDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 570, 130, 30));
+        add(jGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 530, 230, -1));
+        add(jAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 500, 230, -1));
+        add(jStartDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 560, 230, 30));
 
         jLabel3.setText("Name");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 73, -1));
-        add(jLevel, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 610, 130, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 73, 20));
+        add(jLevel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 600, 230, 30));
 
         jLabel4.setText("Employee ID");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 73, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 73, 20));
 
         jLabel5.setText("Age");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 73, 20));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 40, 30));
 
         jLabel6.setText("Gender");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 73, 20));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 73, 20));
 
         jLabel7.setText("Start Date");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 580, 73, 20));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, 73, 20));
 
         jLabel8.setText("Level");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 610, 73, 20));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, 73, 20));
 
         jProfilePic.setToolTipText("");
         jProfilePic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(jProfilePic, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 510, 200, 210));
+        add(jProfilePic, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 460, 200, 210));
 
-        jLabel2.setText("Search Employee: ");
+        jLabel2.setText("Quick search...");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 100, 30));
 
         jSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -176,13 +178,19 @@ public class ViewJPanel extends javax.swing.JPanel {
                 jSearchKeyPressed(evt);
             }
         });
-        add(jSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 550, -1));
+        add(jSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 570, 30));
 
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("Profile Picture");
         jLabel13.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 720, 120, 30));
+        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 670, 120, 30));
         add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 490, -1, -1));
+
+        jLabel14.setText("(enter name, employee id, or any other field in quick search to know whether the record exists in the system)");
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 590, 30));
+
+        jLabel15.setText("(Click on a record and then click View Details or Delete to perform required action)");
+        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 440, 20));
     }// </editor-fold>//GEN-END:initComponents
 
     private void JDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JDeleteActionPerformed
@@ -274,6 +282,8 @@ public class ViewJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

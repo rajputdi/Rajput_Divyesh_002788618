@@ -31,6 +31,10 @@ public class mainForm extends javax.swing.JFrame {
 
         splitPane = new javax.swing.JSplitPane();
         splitWorkArea = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         splitMenu = new javax.swing.JPanel();
         btnCreate = new javax.swing.JButton();
         btnView = new javax.swing.JButton();
@@ -38,15 +42,48 @@ public class mainForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Stencil", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("HR Employee Management Software");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextArea1.setRows(5);
+        jTextArea1.setText("   The employee profile will have following fields:  \n   • Name  \n   • Employee ID \n   • Age  \n   • Gender \n   • Start date  \n   • Level \n   • Team Info  \n   • Position  \n   • Cell phone number \n   • Email address  \n   • Profile Photo\n\n   Application will allow user to do\n   • Create, Read, Update, Delete employee profile\n   • Perform a quick search to view if the employee record exists in the system\n   • Search employee profile from employee directory based on Name and Employee ID and then perform update\n   • Display the photo when reading employee profile\n\n");
+        jTextArea1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jTextArea1.setCaretColor(new java.awt.Color(242, 242, 242));
+        jTextArea1.setMargin(new java.awt.Insets(10, 10, 5, 8));
+        jScrollPane1.setViewportView(jTextArea1);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 12, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 463, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 43, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout splitWorkAreaLayout = new javax.swing.GroupLayout(splitWorkArea);
         splitWorkArea.setLayout(splitWorkAreaLayout);
         splitWorkAreaLayout.setHorizontalGroup(
             splitWorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
+            .addGroup(splitWorkAreaLayout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         splitWorkAreaLayout.setVerticalGroup(
             splitWorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 612, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         splitPane.setRightComponent(splitWorkArea);
@@ -67,7 +104,7 @@ public class mainForm extends javax.swing.JFrame {
             }
         });
 
-        btnSearch.setText("Search");
+        btnSearch.setText("Search/Update");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
@@ -84,10 +121,10 @@ public class mainForm extends javax.swing.JFrame {
                     .addComponent(btnView)
                     .addComponent(btnSearch))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, splitMenuLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(splitMenuLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(btnCreate)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         splitMenuLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCreate, btnSearch, btnView});
@@ -101,7 +138,7 @@ public class mainForm extends javax.swing.JFrame {
                 .addComponent(btnView)
                 .addGap(18, 18, 18)
                 .addComponent(btnSearch)
-                .addContainerGap(394, Short.MAX_VALUE))
+                .addContainerGap(402, Short.MAX_VALUE))
         );
 
         splitPane.setLeftComponent(splitMenu);
@@ -183,6 +220,10 @@ public class mainForm extends javax.swing.JFrame {
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnView;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel splitMenu;
     private javax.swing.JSplitPane splitPane;
     private javax.swing.JPanel splitWorkArea;
