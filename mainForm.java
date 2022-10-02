@@ -30,13 +30,28 @@ public class mainForm extends javax.swing.JFrame {
     private void initComponents() {
 
         splitPane = new javax.swing.JSplitPane();
+        splitWorkArea = new javax.swing.JPanel();
         splitMenu = new javax.swing.JPanel();
         btnCreate = new javax.swing.JButton();
         btnView = new javax.swing.JButton();
         btnSearch = new javax.swing.JButton();
-        splitWorkArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout splitWorkAreaLayout = new javax.swing.GroupLayout(splitWorkArea);
+        splitWorkArea.setLayout(splitWorkAreaLayout);
+        splitWorkAreaLayout.setHorizontalGroup(
+            splitWorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 660, Short.MAX_VALUE)
+        );
+        splitWorkAreaLayout.setVerticalGroup(
+            splitWorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 612, Short.MAX_VALUE)
+        );
+
+        splitPane.setRightComponent(splitWorkArea);
+
+        splitMenu.setBackground(new java.awt.Color(102, 102, 255));
 
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -45,7 +60,7 @@ public class mainForm extends javax.swing.JFrame {
             }
         });
 
-        btnView.setText("View");
+        btnView.setText("View/Delete");
         btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnViewActionPerformed(evt);
@@ -66,13 +81,16 @@ public class mainForm extends javax.swing.JFrame {
             .addGroup(splitMenuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(splitMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCreate)
                     .addComponent(btnView)
                     .addComponent(btnSearch))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, splitMenuLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnCreate)
+                .addContainerGap())
         );
 
-        splitMenuLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCreate, btnView});
+        splitMenuLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCreate, btnSearch, btnView});
 
         splitMenuLayout.setVerticalGroup(
             splitMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,23 +101,10 @@ public class mainForm extends javax.swing.JFrame {
                 .addComponent(btnView)
                 .addGap(18, 18, 18)
                 .addComponent(btnSearch)
-                .addContainerGap(382, Short.MAX_VALUE))
+                .addContainerGap(394, Short.MAX_VALUE))
         );
 
         splitPane.setLeftComponent(splitMenu);
-
-        javax.swing.GroupLayout splitWorkAreaLayout = new javax.swing.GroupLayout(splitWorkArea);
-        splitWorkArea.setLayout(splitWorkAreaLayout);
-        splitWorkAreaLayout.setHorizontalGroup(
-            splitWorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 668, Short.MAX_VALUE)
-        );
-        splitWorkAreaLayout.setVerticalGroup(
-            splitWorkAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-
-        splitPane.setRightComponent(splitWorkArea);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -107,7 +112,7 @@ public class mainForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 773, Short.MAX_VALUE)
+                .addComponent(splitPane)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -122,6 +127,7 @@ public class mainForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         CreateJpanel createPanel = new CreateJpanel(employee);
         splitPane.setRightComponent(createPanel);
+        
         
 
     }//GEN-LAST:event_btnCreateActionPerformed
