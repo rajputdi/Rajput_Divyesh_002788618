@@ -265,10 +265,17 @@ public class CreateJpanel extends javax.swing.JPanel {
             return;
         }
      if(jAge.getText().isEmpty()){
-            JOptionPane.showMessageDialog(this, "Age cannot be Empty");
+            JOptionPane.showMessageDialog(this, "Age cannot be empty");
             return;
         }
-       
+     if( checkForAlphaNum(jCellNo.getText()) ){
+         
+            JOptionPane.showMessageDialog(this, "Contact Number should be numeric only!!!");
+     }
+     if (jCellNo.getText().length()!= 10){
+            JOptionPane.showMessageDialog(this, "Contact Number should be numeric and 10 digits only!!!");
+            return;
+        }  
      
      String eName = jName.getText();
      String eNumber = jNumber.getText();

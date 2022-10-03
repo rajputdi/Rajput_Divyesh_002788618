@@ -14,6 +14,7 @@ public class mainForm extends javax.swing.JFrame {
     /**
      * Creates new form mainForm
      */
+    
     EmployeeList employee;
     public mainForm() {
         initComponents();
