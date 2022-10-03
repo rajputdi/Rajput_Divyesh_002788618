@@ -93,21 +93,24 @@ public class ViewJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 760, 270));
 
+        jViewEmp.setBackground(new java.awt.Color(153, 153, 255));
         jViewEmp.setText("View details");
         jViewEmp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jViewEmpActionPerformed(evt);
             }
         });
-        add(jViewEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 420, 100, 30));
+        add(jViewEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 420, 110, 30));
 
+        JDelete.setBackground(new java.awt.Color(255, 102, 102));
+        JDelete.setIcon(new javax.swing.ImageIcon("C:\\Users\\Divyesh Rajput\\Downloads\\delete.png")); // NOI18N
         JDelete.setText("Delete");
         JDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JDeleteActionPerformed(evt);
             }
         });
-        add(JDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 420, 90, 30));
+        add(JDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 420, 110, 30));
 
         jLabel9.setText("Team Info");
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 650, 65, 20));
@@ -176,6 +179,9 @@ public class ViewJPanel extends javax.swing.JPanel {
         jSearch.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jSearchKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jSearchKeyReleased(evt);
             }
         });
         add(jSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 570, 30));
@@ -268,6 +274,14 @@ public class ViewJPanel extends javax.swing.JPanel {
     private void jGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jGenderActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jGenderActionPerformed
+
+    private void jSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jSearchKeyReleased
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel)tblEmployees.getModel();
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(model);
+        tblEmployees.setRowSorter (tr);
+        tr.setRowFilter(RowFilter.regexFilter(jSearch.getText().trim()));
+    }//GEN-LAST:event_jSearchKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

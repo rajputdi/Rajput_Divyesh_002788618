@@ -18,10 +18,6 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="656" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" pref="369" max="-2" attributes="0"/>
@@ -60,39 +56,32 @@
                           <Component id="jLabel12" alignment="0" pref="84" max="32767" attributes="0"/>
                           <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                               <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                      <Component id="jEmailAdd" min="-2" pref="328" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                      <Component id="jCellNo" min="-2" pref="328" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="jEmailAdd" alignment="0" min="-2" pref="328" max="-2" attributes="0"/>
+                                  <Component id="jCellNo" alignment="1" min="-2" pref="328" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                  <Component id="jPosition" min="-2" pref="328" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jPosition" alignment="1" min="-2" pref="328" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTeamInfo" max="32767" attributes="0"/>
-                                  <Component id="jLevel" max="32767" attributes="0"/>
-                                  <Component id="jStartDate" max="32767" attributes="0"/>
-                                  <Component id="jGender" max="32767" attributes="0"/>
-                                  <Component id="jAge" max="32767" attributes="0"/>
-                                  <Component id="jNumber" max="32767" attributes="0"/>
-                                  <Component id="jName" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jTeamInfo" max="32767" attributes="0"/>
+                              <Component id="jLevel" max="32767" attributes="0"/>
+                              <Component id="jStartDate" max="32767" attributes="0"/>
+                              <Component id="jGender" max="32767" attributes="0"/>
+                              <Component id="jAge" max="32767" attributes="0"/>
+                              <Component id="jNumber" max="32767" attributes="0"/>
+                              <Component id="jName" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="643" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="121" max="32767" attributes="0"/>
+              <EmptySpace pref="134" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -119,9 +108,9 @@
                       <Component id="jbtnSearch" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="235" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="108" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jViewSearch" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jUpdateEmployee" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -134,12 +123,12 @@
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                  <Component id="jNumber" min="-2" max="-2" attributes="0"/>
+                  <Component id="jNumber" linkSize="5" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel6" min="-2" pref="20" max="-2" attributes="0"/>
-                  <Component id="jAge" min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="jAge" linkSize="5" min="-2" pref="20" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -176,7 +165,7 @@
                   <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                   <Component id="jEmailAdd" linkSize="4" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="92" max="32767" attributes="0"/>
+              <EmptySpace pref="235" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -239,6 +228,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jbtnSearch">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Search"/>
       </Properties>
       <Events>
@@ -247,6 +239,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jViewSearch">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="cc" red="cc" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="View Details"/>
       </Properties>
       <Events>
@@ -334,6 +329,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="jUpdateEmployee">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="cc" red="cc" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Update "/>
       </Properties>
       <Events>

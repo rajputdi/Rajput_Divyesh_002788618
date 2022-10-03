@@ -89,6 +89,7 @@ public class SearchPanel extends javax.swing.JPanel {
             }
         });
 
+        jbtnSearch.setBackground(new java.awt.Color(255, 255, 204));
         jbtnSearch.setText("Search");
         jbtnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,6 +97,7 @@ public class SearchPanel extends javax.swing.JPanel {
             }
         });
 
+        jViewSearch.setBackground(new java.awt.Color(204, 204, 255));
         jViewSearch.setText("View Details");
         jViewSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,6 +143,7 @@ public class SearchPanel extends javax.swing.JPanel {
 
         jLabel13.setText("Level");
 
+        jUpdateEmployee.setBackground(new java.awt.Color(204, 204, 255));
         jUpdateEmployee.setText("Update ");
         jUpdateEmployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,9 +157,6 @@ public class SearchPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 656, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(69, 69, 69)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -189,29 +189,25 @@ public class SearchPanel extends javax.swing.JPanel {
                             .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(25, 25, 25)
-                                        .addComponent(jEmailAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGap(25, 25, 25)
-                                        .addComponent(jCellNo, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addGap(25, 25, 25)
-                                    .addComponent(jPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTeamInfo)
-                                    .addComponent(jLevel)
-                                    .addComponent(jStartDate)
-                                    .addComponent(jGender)
-                                    .addComponent(jAge)
-                                    .addComponent(jNumber)
-                                    .addComponent(jName))))))
-                .addContainerGap(121, Short.MAX_VALUE))
+                                    .addComponent(jEmailAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jCellNo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jPosition, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTeamInfo)
+                                .addComponent(jLevel)
+                                .addComponent(jStartDate)
+                                .addComponent(jGender)
+                                .addComponent(jAge)
+                                .addComponent(jNumber)
+                                .addComponent(jName))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 643, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(134, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jUpdateEmployee, jViewSearch});
@@ -234,9 +230,9 @@ public class SearchPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jbtnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
+                .addGap(10, 10, 10)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jViewSearch)
                     .addComponent(jUpdateEmployee))
@@ -280,7 +276,7 @@ public class SearchPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12)
                     .addComponent(jEmailAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(235, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jUpdateEmployee, jViewSearch});
@@ -288,6 +284,8 @@ public class SearchPanel extends javax.swing.JPanel {
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jGender, jStartDate});
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jCellNo, jEmailAdd, jLevel, jPosition, jTeamInfo});
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jAge, jNumber});
 
     }// </editor-fold>//GEN-END:initComponents
 
@@ -320,7 +318,7 @@ public class SearchPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRowIndex = tblEmployees.getSelectedRow();
         
-        
+      
         
         if(selectedRowIndex <0){
             JOptionPane.showMessageDialog(this, "Please select a record to view details");
@@ -328,6 +326,22 @@ public class SearchPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) tblEmployees.getModel();
         CreateEmployee selectedEmployee;
         selectedEmployee = (CreateEmployee) model.getValueAt(selectedRowIndex , 0);
+        
+        if (jNumber.getText().length()!= 6 && jNumber.getText().isEmpty()){
+         
+         JOptionPane.showMessageDialog(this, "Employee Number should be of 6 characters and cannot be left empty");
+         return;
+     }
+        if(jEmailAdd.getText().isEmpty() || !jEmailAdd.getText().contains("@")|| !jEmailAdd.getText().contains(".com")){
+            JOptionPane.showMessageDialog(this, "Email ID cannot be empty or invalid");
+            return;
+        }
+        
+        if(jAge.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Age cannot be Empty");
+            return;
+        }
+        
         Short empAge = Short.valueOf(jAge.getText());
         selectedEmployee.seteName(jName.getText());
         selectedEmployee.seteNumber(jNumber.getText());
