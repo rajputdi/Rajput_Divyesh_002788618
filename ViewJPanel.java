@@ -253,6 +253,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         jProfilePic.setIcon(new ImageIcon(image));
         
         
+        
     }//GEN-LAST:event_jViewEmpActionPerformed
 
     private void jCellNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCellNoActionPerformed

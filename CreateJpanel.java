@@ -256,6 +256,10 @@ public class CreateJpanel extends javax.swing.JPanel {
          JOptionPane.showMessageDialog(this, "Employee Number should be of 6 characters and cannot be left empty");
          return;
      }
+     if( checkForAlphaNum(jNumber.getText())){
+            JOptionPane.showMessageDialog(this, "Employee ID cannot be alphanumeric");
+            return;
+        }
      if(jEmailAdd.getText().isEmpty() || !jEmailAdd.getText().contains("@")|| !jEmailAdd.getText().contains(".com")){
             JOptionPane.showMessageDialog(this, "Email ID cannot be empty or invalid");
             return;
@@ -291,6 +295,7 @@ public class CreateJpanel extends javax.swing.JPanel {
      ce.seteTeamInfo(eTeamInfo);
      ce.seteCellNo(eCellNo);
      ce.seteProfilePath(selectedImagePath); //profile picture change
+     selectedImagePath = "";
      
      
      JOptionPane.showMessageDialog(this, "New Employee added");
@@ -305,6 +310,7 @@ public class CreateJpanel extends javax.swing.JPanel {
      jStartDate.setText("");
      jTeamInfo.setText("");
      jPosition.setText("");
+     
      
         
      
@@ -357,4 +363,13 @@ public class CreateJpanel extends javax.swing.JPanel {
     private javax.swing.JTextField jTeamInfo;
     private javax.swing.JButton jUpload;
     // End of variables declaration//GEN-END:variables
+
+    private boolean checkForAlphaNum(String empNo){
+        for(int i=0;i<empNo.length();i++){
+           char c = empNo.charAt(i);
+           if((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+                return true;
+           }
+        return false;
+    }
 }

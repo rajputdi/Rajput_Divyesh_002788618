@@ -11,7 +11,5 @@ package com.mycompany.employeemgmnt;
  */
 public class EmployeeMgmnt {
 
-    public static void main(String[] args) {
-        
-    }
+    
 }
