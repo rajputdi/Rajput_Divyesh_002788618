@@ -356,12 +356,13 @@ public class SearchPanel extends javax.swing.JPanel {
         model.setValueAt(selectedEmployee, selectedRowIndex, 0);
         model.setValueAt(selectedEmployee.geteNumber(), selectedRowIndex, 1);
         model.setValueAt(selectedEmployee.geteAge(), selectedRowIndex, 2);
-        model.setValueAt(selectedEmployee.geteDate(), selectedRowIndex, 3);
-        model.setValueAt(selectedEmployee.geteLevel(), selectedRowIndex, 4);
-        model.setValueAt(selectedEmployee.geteTeamInfo(), selectedRowIndex, 5);
-        model.setValueAt(selectedEmployee.getePosition(), selectedRowIndex, 6);
-        model.setValueAt(selectedEmployee.geteCellNo(), selectedRowIndex, 7);
-        model.setValueAt(selectedEmployee.getEmailAdd(), selectedRowIndex, 8);
+        model.setValueAt(selectedEmployee.geteGender(), selectedRowIndex, 3);
+        model.setValueAt(selectedEmployee.geteDate(), selectedRowIndex, 4);
+        model.setValueAt(selectedEmployee.geteLevel(), selectedRowIndex, 5);
+        model.setValueAt(selectedEmployee.geteTeamInfo(), selectedRowIndex, 6);
+        model.setValueAt(selectedEmployee.getePosition(), selectedRowIndex, 7);
+        model.setValueAt(selectedEmployee.geteCellNo(), selectedRowIndex, 8);
+        model.setValueAt(selectedEmployee.getEmailAdd(), selectedRowIndex, 9);
         
         JOptionPane.showMessageDialog(this, "Record Updated Successfully!!!");
         
